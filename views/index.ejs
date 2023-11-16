@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Changa+One&family=Crimson+Text&family=Dancing+Script&family=Fasthand&family=GFS+Didot&family=Great+Vibes&family=Hind:wght@500&family=Libre+Baskerville&family=Nunito:wght@200&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- background image using css-->
+    </header>
+    <div class="container">
+
+        <div class="left-side">
+
+            <div class="quote">
+                <!-- a quote is to be added using an api -->
+                <h2 class="center_align">quote</h2>
+                <p class="paragraph_text">
+                    <%= quote %>
+                </p>
+                <h3>- By <%= name %></h3>
+            </div>
+            
+            <div class="to-do-list">
+                <h2 class="center_align">📋To Do List📋</h2>
+                <div class="new-task-input-box">
+                    <form action="/post" method="post">
+                      <input id="textspace" type="text" name="newtask" placeholder="Enter new task here" required></input>
+                      <button type="submit" class="submit-button">Add</button>
+                    </form>
+                  </div>
+                <div class="flexbox-containing-new-tasks">
+                    <form action="/delete" method="post">
+                     <% activity.forEach(activity=>{%>
+                        <div class="added-tasks">
+                            <input type="checkbox" name="checkbox" value="<%= activity._id %>" class="checkbox" onchange="this.form.submit()"><p class="paragraph_text"><%= activity.task %></p>
+                        </div>
+                     <% }); %>
+                   </form>                   
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="right-side">
+
+            <div class="date-and-time">
+                <h2 class="center_align"><%= day %>, 
+                     <%= date %> <%= month %> <%= year %>
+                </h2>
+            </div>
+    
+            <div class="appointments">
+                <h2 class="center_align">🤝Appointments🤝</h2>
+                <div class="new-task-input-box">
+                    <form action="/post/appointments" method="post">
+                        <input type="date" name="date" required>
+                        <input type="time" name="time" required>
+                        <input id="agendaforappointment" type="text" name="newappointment" required>
+                        <button type="submit" class="submit-button">Add</button>
+                    </form>
+                </div>
+                <div class="flexbox-containing-new-tasks">
+                  <form action="/appointmentdelete" method="post">
+                  <% appointment.forEach(appo=>{%>
+                  <div class="added-appointments">
+                    <input type="checkbox" name="checkbox" value="<%= appo._id %>" class="checkbox" onchange="this.form.submit()"><h4><%= appo.date %></h4> <h4><%=appo.time%></h4><p class="paragraph_text"><%= appo.agenda %></p>
+                  </div>
+                 <%  }); %>
+                 </form>
+                </div>
+        </div>
+    
+            <div class="weather">
+                <h2><%= City %></h2>
+                <div class="anotherweatherbox">
+                    <div class="temp-box"><h1 class="temp"><%= temp %></h1><span class="degree-celcius-sign">°C</span></div>
+                    <div class="weather-condition">
+                        <img  src="<%= icon %>",height="100px">
+                        <h2><%= condition %></h2>
+                    </div>
+                    <h2 class="aqi">Aqi <pre>   </pre><%= aqi %></h2>
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    height: 140px;
+    background-image: url("../images/image-background.jpg");
+}
+.quote{
+    background-color:#dbb2e2;
+    min-height: 100px;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.quote>h3{
+    text-align: right;
+}
+
+.paragraph_text{
+    font-size: larger;
+    font-family: cursive;
+}
+
+.date-and-time{
+    background-color:#9be78c;
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.date-and-time>h2{
+    margin-top: 30px;
+}
+
+.center_align{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: xx-large;
+}
+
+.appointments{
+    min-height: 300px;
+    background-color: rgb(245, 239, 159);
+    border-radius: 5px;
+    padding-bottom: 10px;
+
+}
+.to-do-list{
+    min-height: 100vh;
+    background-color: rgb(236, 184, 136);
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+.weather{
+    height: 200px;
+    background-image:url("../images/weather.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    padding:10px;
+    color: white;
+}
+.anotherweatherbox{
+    display: grid;
+    grid-template: 80px 80px/50% 50%;
+}
+.temp-box{
+    grid-row : span 2;
+    order: 1;
+}
+.temp{
+    font-size: 9rem;
+}
+.degree-celcius-sign{
+    position: relative;
+    bottom: 128px;
+    left: 150px;
+    font-size: large;
+}
+.weather-condition{
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.aqi{
+    order: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-side{
+    display:flex;
+    flex-direction: column;
+    gap: 5vh;
+    margin-left: 50px;
+    width: 40%;
+}
+.right-side{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 40%;
+    margin-right: 50px;
+
+}
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.new-task-input-box{
+    background-color:rgb(184, 176, 255);
+    padding:5px;
+}
+#textspace{
+    width: 80%;
+    border: none;
+    height:20px ;
+    margin-left: 10px;
+}
+.submit-button{
+    height:30px;
+    width: 50px;
+    background-color: green;
+    color:white;
+    border: none;
+    border-radius:5px;
+    position: relative;
+    left: 20px;
+}
+.added-tasks{
+    min-height: 30px;
+    padding: 5px;
+    background-color: rgb(255, 201, 248);
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.flexbox-containing-new-tasks>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+#agendaforappointment{
+    width: 45%;
+}
+.added-appointments{
+    display: flex;
+    gap: 15px;
+    min-height: 30px;
+    padding: 5px;
+    background-color: rgb(241, 233, 240);
+    width: 90%;
+    border-radius: 5px;
+    align-items: center;
+}
